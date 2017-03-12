@@ -34,6 +34,7 @@ public class Brain implements Runnable {
                     System.out.println("Connected: " + client.getSession().isConnected());
                 } else if (input.equalsIgnoreCase("exit") | input.equalsIgnoreCase("quit")) {
                     System.out.println("Exiting.");
+                    client.getSession().disconnect("Quitting.");
                     System.exit(1);
                 } else if (input.equalsIgnoreCase("debug")) {
                     Main.debug = !Main.debug;
