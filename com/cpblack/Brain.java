@@ -32,6 +32,8 @@ public class Brain implements Runnable {
                 input = input.substring(1);
                 if (input.equalsIgnoreCase("isconnected") | input.equalsIgnoreCase("connection")) {
                     System.out.println("Connected: " + client.getSession().isConnected());
+                } if (input.equalsIgnoreCase("coords") | input.equalsIgnoreCase("location")){
+                    System.out.println("Coordinates: +"+inGame.player.x+", "+inGame.player.y+", "+inGame.player.z+", ")
                 } else if (input.equalsIgnoreCase("exit") | input.equalsIgnoreCase("quit")) {
                     System.out.println("Exiting.");
                     client.getSession().disconnect("Quitting.");
