@@ -32,7 +32,13 @@ public class Brain implements Runnable {
                 input = input.substring(1);
                 if (input.equalsIgnoreCase("isconnected") | input.equalsIgnoreCase("connection")) {
                     System.out.println("Connected: " + client.getSession().isConnected());
-                } if (input.equalsIgnoreCase("coords") | input.equalsIgnoreCase("location")){
+                } else if (input.equalsIgnoreCase("health") | input.equalsIgnoreCase("hp")){
+                    System.out.println("Health: "+inGame.player.health)
+                    System.out.println("Food: "+inGame.player.food)
+                    System.out.println("Saturation: "+inGame.player.saturation)
+                } else if (input.equalsIgnoreCase("slots")) {
+                    
+                } else if (input.equalsIgnoreCase("coords") | input.equalsIgnoreCase("location")){
                     System.out.println("Coordinates: +"+inGame.player.x+", "+inGame.player.y+", "+inGame.player.z)
                 } else if (input.equalsIgnoreCase("exit") | input.equalsIgnoreCase("quit")) {
                     System.out.println("Closing Connection.");
@@ -43,7 +49,7 @@ public class Brain implements Runnable {
                     Main.debug = !Main.debug;
                     System.out.println("Debug: " + Main.debug);
                 } else if (input.equalsIgnoreCase("help")){
-                    System.out.println("Commands: ~connection, ~location, ~debug, ~exit, ~help");
+                    System.out.println("Commands: ~help, ~connection, ~location, ~debug, ~exit, ~health");
                 } else {
                     System.out.println("Unknown Command: " + input);
                 }
