@@ -32,6 +32,15 @@ public class inGame {
         public static Float yaw;
         public static Float pitch;
         public static boolean isGrounded;
+        public static class inventory {
+        int items = new int[4][9];
+        int equipment = new int[5];
+        public int[] getHotbar(){
+        return this.items[3];
+        }
+        public void setHotbar(int[] listIn) {
+            this.items[3] = listIn;
+        }
     }
     public static class world {
         public static WorldType worldType;
